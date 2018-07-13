@@ -1,0 +1,70 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+public class Lib {
+
+	private JFrame frame;
+	private JTextField txtLibraryManagement;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Lib window = new Lib();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Lib() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		txtLibraryManagement = new JTextField();
+		txtLibraryManagement.setBounds(0, 0, 450, 19);
+		txtLibraryManagement.setText("Library Management");
+		txtLibraryManagement.setEditable(false);
+		frame.getContentPane().add(txtLibraryManagement);
+		txtLibraryManagement.setColumns(10);
+		
+		JLabel lblUsername = new JLabel("Username: ");
+		lblUsername.setBounds(12, 69, 91, -13);
+		frame.getContentPane().add(lblUsername);
+		
+		textField = new JTextField();
+		textField.setBounds(119, 61, 134, 19);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblEmailid = new JLabel("Email-id:");
+		lblEmailid.setBounds(30, 114, 70, 15);
+		frame.getContentPane().add(lblEmailid);
+	}
+}
